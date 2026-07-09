@@ -6,6 +6,7 @@ from commands.binary import binary_command
 from commands.rot13 import rot13_command
 from commands.md5 import md5_command
 from commands.charcode import charcode_command
+from commands.identify import identify_command
 
 
 command_config = {
@@ -48,5 +49,11 @@ command_config = {
         'help': 'charcode operations',
         'methods': ['encode', 'decode'],
         'func': charcode_command
+    },
+    'identify': {
+        'help': 'identify operations',
+        'methods': ['identify'],
+        'func': identify_command
+
     }
 }
