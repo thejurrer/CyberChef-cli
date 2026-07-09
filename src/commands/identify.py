@@ -28,7 +28,6 @@ def b6432_detector(value: str) -> tuple[bool, bool]:
     
 
 def hash_detector(value: str) -> tuple[bool, bool]:
-    # hashtokens = "1234567890abcdef"
     md5 = False
     sha256 = False
     if len(value) == 32:
@@ -43,9 +42,6 @@ def hash_detector(value: str) -> tuple[bool, bool]:
         if (c_decimal >= 48 and c_decimal <= 57) or (c_decimal >= 97 and c_decimal <= 102):
             continue
 
-        # if c in hashtokens:
-        #     continue
-        
         md5, sha256 = False, False
         break
     return (md5, sha256)
