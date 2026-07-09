@@ -23,7 +23,8 @@ bin: Binary operations
 r13: Rot13 operations
 MD5: MD5 operations
 charcode: Charcode operations
-Each command supports various methods, which can be selected by -d (decode), -e (encode) or -H (hash).
+identify: Identifies md5, sha256, hex, b64, b32
+Each command supports various methods, which can be selected by -d (decode), -e (encode), -H (hash) or -i (identify).
 ```
 
 If no command or method is selected, the program will interactively ask for them. If no value is provided for the operation, the program will ask for it interactively as well.
