@@ -6,7 +6,7 @@ def b6432_detector(value: str) -> tuple[bool, bool]:
     b64tokens = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
     b32tokens = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"
     if value[-1] == "=":
-        return (True, True) # return b64 true and b32 true
+        b64, b32 = True, True # return b64 true and b32 true
         
     
     b64tokens_count = 0
@@ -16,6 +16,10 @@ def b6432_detector(value: str) -> tuple[bool, bool]:
             b64tokens_count += 1
         if c in b32tokens:
             b32tokens_count += 1
+        if c not in b64tokens:
+            b64tokens_count = 0
+        if c not in b32tokens:
+            b32tokens_count = 0
 
     b64, b32 = False, False
     if b64tokens_count >= (len(value) // 2):
